@@ -13,7 +13,7 @@ public static class Logger
 		var stackTrace = new StackTrace();
 		var callerMethod = stackTrace.GetFrame(1).GetMethod();
 		Debug.Assert(callerMethod.ReflectedType != null,
-			"callerMethod.ReflectedType is not equal for null");
+			"callerMethod.ReflectedType is not equal for null.");
 		var callerName = callerMethod.ReflectedType.Name;
 		
 		float triggerTime;
@@ -26,14 +26,14 @@ public static class Logger
 			
 			LoggerDictionary.Remove(key);
 
-			Debug.Log(callerName + " >> " + callerMethod + " >> " + "(" + key + ") " + "has been completed at " + 
+			Debug.Log(callerName + " >> " + callerMethod + " >> "  + key + " " + "has been completed at " + 
 			          endedTime + "s, elapsed time " + (endedTime - triggerTime) + "s.");
 		}
 		else
 		{
 			triggerTime = Time.realtimeSinceStartup;
 			LoggerDictionary.Add(key, Time.realtimeSinceStartup);
-			Debug.Log(callerName + " >> " + callerMethod + " >> " + "(" + key + ") " + "has been triggered at "
+			Debug.Log(callerName + " >> " + callerMethod + " >> " + key + " " + "has been triggered at "
 			          + triggerTime + "s.");
 		}
 	}

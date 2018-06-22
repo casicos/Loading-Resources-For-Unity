@@ -23,11 +23,6 @@ public class Loader : Singleton<Loader>
 	
 	#region <Unity/Callbacks>
 
-	protected override void Awake()
-	{
-		base.Awake();			
-	}
-
 	private void Start()
 	{
 		SetTrigger();
@@ -52,13 +47,14 @@ public class Loader : Singleton<Loader>
 
 		for (var i = 0; i < backgroundMusicIdGroup.Count; ++i)
 		{
-			var t = Time.realtimeSinceStartup;
+			var triggerTime = Time.realtimeSinceStartup;
 			print("Loading (" + backgroundMusicIdGroup[i] + ") => Start");
 			SoundManager.GetInstance.BackgroundMusicGroup.Add(
 				new BackgroundMusic(backgroundMusicIdGroup[i], backgroundMusicBpmGroup[i])
 					);
-			
-			print("Loading (" + backgroundMusicIdGroup[i] + ") => End (" + (Time.realtimeSinceStartup - t) + "ms)");
+
+			var elapsedTime = Time.realtimeSinceStartup - Time.realtimeSinceStartup;
+			print("Loading (" + backgroundMusicIdGroup[i] + ") => End (" + elapsedTime + "ms)");
 		}
 
 		SoundManager.GetInstance.SetTrigger(0);

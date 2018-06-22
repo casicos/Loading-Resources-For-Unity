@@ -14,7 +14,7 @@ public class Loader : Singleton<Loader>
 	private const string AnimationFileSourcePath = "ANIMATION_CSV/RawAniData/HumanType/";
 	public const string BackgroundMusicSourcePath = "Sounds/Musics/";
 
-	#endregion
+	#endregion </Consts>
 
 	#region <Fields>
 	

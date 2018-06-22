@@ -19,9 +19,7 @@ public class SoundManager : Singleton<SoundManager>
     public void SetTrigger(int stage)
     {        
         CurrentPlayingBackgroundMusicSource.clip = BackgroundMusicGroup[stage].Clip;
-        CurrentPlayingBackgroundMusicSource.Play();
-        
-//        RhythmManager.GetInstance.SetTrigger(BgmInfo);
+        CurrentPlayingBackgroundMusicSource.Play();       
     }
 
     /// <summary>

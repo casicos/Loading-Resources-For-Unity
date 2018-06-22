@@ -7,6 +7,7 @@ using BackgroundMusic = SoundManager.BackgroundMusic;
 /// </summary>
 public class Loader : Singleton<Loader>
 {
+	
 	#region <Consts>
 
 	private const string AnimationIndexFilePath = "ANIMATION_CSV/AnimationList/human_00";
@@ -37,8 +38,8 @@ public class Loader : Singleton<Loader>
 	#region <Methods>
 
 	public void SetTrigger()
-	{
-		print("SetTrigger()");
+	{		
+		Logger.Write("SetTrigger");	
 		
 		var backgroundMusicIdGroup = new List<string> {"All_of_us", "Night_in_Katakum"};
 		var backgroundMusicBpmGroup = new List<float> {120f, 115f};
@@ -47,15 +48,15 @@ public class Loader : Singleton<Loader>
 
 		for (var i = 0; i < backgroundMusicIdGroup.Count; ++i)
 		{
-			var triggerTime = Time.realtimeSinceStartup;
-			print("Loading (" + backgroundMusicIdGroup[i] + ") => Start");
+			Logger.Write(backgroundMusicIdGroup[i]);
 			SoundManager.GetInstance.BackgroundMusicGroup.Add(
 				new BackgroundMusic(backgroundMusicIdGroup[i], backgroundMusicBpmGroup[i])
 					);
 
-			var elapsedTime = Time.realtimeSinceStartup - Time.realtimeSinceStartup;
-			print("Loading (" + backgroundMusicIdGroup[i] + ") => End (" + elapsedTime + "ms)");
+			Logger.Write(backgroundMusicIdGroup[i]);
 		}
+
+		Logger.Write("SetTrigger");
 
 		SoundManager.GetInstance.SetTrigger(0);
 	}
@@ -65,4 +66,5 @@ public class Loader : Singleton<Loader>
 	#region <Classes>
 
 	#endregion </Classes>
+	
 }

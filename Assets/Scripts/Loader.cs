@@ -15,12 +15,6 @@ public class Loader : Singleton<Loader>
 	public const string BackgroundMusicSourcePath = "Sounds/Musics/";
 
 	#endregion </Consts>
-
-	#region <Fields>
-	
-	
-
-	#endregion </Fields>
 	
 	#region <Unity/Callbacks>
 

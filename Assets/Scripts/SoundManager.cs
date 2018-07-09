@@ -26,7 +26,7 @@ public class SoundManager : Singleton<SoundManager>
     /// Extended information for the bgm files.
     /// </summary>
     /// <exception cref="FileLoadException">File is not allocated.</exception>
-    public class BackgroundMusic
+    public struct BackgroundMusic
     {
         public readonly string Id;
         public readonly float Bpm;
